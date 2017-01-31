@@ -10,15 +10,16 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Address {
 
-    public static final String EXAMPLE = AddressBlock.EXAMPLE + "," 
-                                    + AddressStreet.EXAMPLE + "," + AddressUnit.EXAMPLE + ","
+    public static final String ADDRESS_SPLIT_WORD = ", ";
+    public static final String EXAMPLE = AddressBlock.EXAMPLE + ADDRESS_SPLIT_WORD 
+                                    + AddressStreet.EXAMPLE + ADDRESS_SPLIT_WORD 
+                                    + AddressUnit.EXAMPLE + ADDRESS_SPLIT_WORD
                                     + AddressPostalCode.EXAMPLE;
     
     public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Address should have four components split by comma";
     // Note that the address parts will also check validity in their own classes
     public static final String ADDRESS_VALIDATION_REGEX = ".+,.+,.+,.+";
-    public static final String ADDRESS_SPLIT_WORD = ", ";
-    
+
     public enum EnumAddressPart {
         BLOCK(0), STREET(1), UNIT(2), POSTAL_CODE(3);
         
