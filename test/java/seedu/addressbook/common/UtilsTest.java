@@ -47,13 +47,18 @@ public class UtilsTest {
         assertAreUnique(1);
         assertAreUnique("");
         assertAreUnique("abc");
+        assertAreUnique(true);
+        List<Object> nullList = Arrays.asList((Object) null);
+        assertAreUnique(nullList);
 
         // all objects unique
         assertAreUnique("abc", "ab", "a");
         assertAreUnique(1, 2);
+        assertAreUnique(1, "abc", (Object) null);
 
         // some identical objects
         assertNotUnique("abc", "abc");
+        assertNotUnique("abc", 111, "abc");
         assertNotUnique("abc", "", "abc", "ABC");
         assertNotUnique("", "abc", "a", "abc");
         assertNotUnique(1, new Integer(1));
