@@ -1,5 +1,8 @@
 package seedu.addressbook.data.tag;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import seedu.addressbook.data.person.Person;
 
 /**
@@ -13,10 +16,18 @@ public class Tagging {
     private Person relevantPerson;
     private Tag relevantTag;
     
+    private static final List<Tagging> TAGGINGS = new ArrayList<Tagging>();
+    
     public Tagging(Type type, Person relevantPerson, Tag relevantTag) {
         this.type = type;
         this.relevantPerson = relevantPerson;
         this.relevantTag = relevantTag;
+        
+        TAGGINGS.add(this);
+    }
+
+    public static List<Tagging> getTaggings() {
+        return TAGGINGS;
     }
 
     public Type getType() {
